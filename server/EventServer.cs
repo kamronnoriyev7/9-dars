@@ -65,6 +65,39 @@ public class EventService
         return list;
     }
 
+    public Event GetMaxTaggedEvent()
+    {
+        var maxElement = int.MinValue;
+        var newElement = new Event();
+        foreach (var eventElement in eventList)
+        {
+            var count = eventElement.Tags.Count;
+            if (count > maxElement)
+            {
+                newElement = eventElement;
+                maxElement = count;
+            }
+        }
+        return newElement;
+    }
+
+    public Event NumberOfPeopleAttending()
+    {
+        var maxElement = int.MinValue;
+        var newElement = new Event();
+        foreach (var eventElement in eventList)
+        {
+            if (eventElement.NumberOfPeopleAttending>maxElement)
+            {
+                maxElement = eventElement.NumberOfPeopleAttending;
+                newElement = eventElement;
+                
+            }
+        }
+        return newElement;
+    }
+
+
     
     
 }

@@ -23,7 +23,9 @@ internal class Program
             Console.WriteLine("3.Update event");
             Console.WriteLine("4.Get All event");
             Console.WriteLine("5.GetEventsByLocation");
-            Console.Write("Enter: ");
+            Console.WriteLine("6.GetMaxTaggedEvent");
+            Console.WriteLine("7.Number of people attending");
+            Console.Write("Enter choice: ");
             var input = Console.ReadLine();
 
             if (input == "1")
@@ -36,6 +38,8 @@ internal class Program
                 Console.Write("Enter Event date: ");
                 newEvent.Date = DateTime.Parse(Console.ReadLine());
                 Console.Write("Enter Event Description: ");
+                Console.WriteLine("Enter number of people attending: ");
+                newEvent.NumberOfPeopleAttending = int.Parse(Console.ReadLine());
                 newEvent.Description = Console.ReadLine();
                 Console.Write("Enter event Attendees count: ");
                 var attendeesCount = Convert.ToInt32(Console.ReadLine());
@@ -126,6 +130,19 @@ internal class Program
                     Console.WriteLine(element.Title);
                 }
             }
+
+            if (input == "6")
+            {
+                var result =eventService.GetMaxTaggedEvent();
+                Console.WriteLine(result);
+            }
+
+            if (input=="7")
+            {
+               var result= eventService.NumberOfPeopleAttending();
+               Console.WriteLine(result);
+            }
+            
             
 
             Console.ReadKey();

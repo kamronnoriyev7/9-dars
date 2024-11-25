@@ -15,6 +15,7 @@ public class Event
     public List<string> Attendees { get; set; } = new List<string>();
 
     public List<string> Tags { get; set; } = new List<string>();
+    public int NumberOfPeopleAttending { get; set; }
 
     public Event()
     {
@@ -25,6 +26,8 @@ public class Event
         Description = Description;
         Attendees = Attendees;
         Tags = Tags;
+        NumberOfPeopleAttending = NumberOfPeopleAttending;
+        
         
     }
 

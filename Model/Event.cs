@@ -27,7 +27,7 @@ public class Event
         Attendees = Attendees;
         Tags = Tags;
         NumberOfPeopleAttending = NumberOfPeopleAttending;
-        
+
         
     }
 
